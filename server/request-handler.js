@@ -11,8 +11,11 @@ this file and include it in basic-server.js so that it actually works.
 *Hint* Check out the node module documentation at http://nodejs.org/api/modules.html.
 
 **************************************************************/
+var http = require('http');
 
 var requestHandler = function(request, response) {
+
+
   // Request and Response come from node's http module.
   //
   // They include information about both the incoming request, such as
@@ -33,7 +36,7 @@ var requestHandler = function(request, response) {
   var statusCode = 200;
 
   // See the note below about CORS headers.
-  var headers = defaultCorsHeaders;
+  //var headers = defaultCorsHeaders;******
 
   // Tell the client we are sending them plain text.
   //
@@ -71,3 +74,4 @@ var defaultCorsHeaders = {
   'access-control-max-age': 10 // Seconds.
 };
 
+exports.requestHandler = requestHandler;
